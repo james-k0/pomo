@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-        <title>Gurt: yo</title>
-    </head>
-    <body>
-        <h1>rendered in electron</h1>
-        <p>p</p>
-    </body>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' file: data:; script-src 'self'; style-src 'self'; media-src 'self' file: data:" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self' file: data:; script-src 'self'; style-src 'self'; media-src 'self' file: data:" />
+  <link rel="stylesheet" href="./styles.css" />
+    <title>Pomo</title>
+  </head>
+  <body>
+    <div id="timer" aria-live="polite">
+      <label for="minutesInput">Minutes:</label>
+      <input id="minutesInput" type="number" min="0" step="1" placeholder="25" />
+      <button id="startBtn">Start</button>
+      <button id="resetBtn" disabled>Reset</button>
+      <h2 id="timerDisplay">00:00</h2>
+    </div>
+  <div id="cycles" class="cycles">
+      Completed cycles: <strong id="cyclesCount">0</strong>
+    </div>
+    <script src="./renderer.js"></script>
+  </body>
 </html>

@@ -1,0 +1,4 @@
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 16px; }
+#timer { display: flex; align-items: center; gap: 8px; }
+#timer h2 { margin: 0 0 0 8px; font-weight: 600; }
+.cycles { margin-top: 8px; }
